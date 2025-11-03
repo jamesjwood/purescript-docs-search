@@ -28,7 +28,7 @@
 
            l = p.lib; p = pkgs;
            npmlock2nix = import inputs.npmlock2nix { inherit pkgs; };
-           our-node = p.nodejs-14_x;
+            our-node = p.nodejs_18;
            ps = import ./purs.nix { inherit npmlock2nix our-node p; } purs-nix;
            pname = "purescript-docs-search";
          in
