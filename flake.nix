@@ -20,17 +20,25 @@
       }
       ({ make-shell, pkgs, ps-tools, system, ... }:
          let
-           purs-nix =
-             inputs.purs-nix
-               { inherit system;
-                 overlays = [ (import ./overlay.nix) ];
-               };
+           # Create an overlay to force latest esbuild everywhere
+           esbuildOverlay = final: prev: {
+             esbuild = prev.esbuild;
+           };
+           # Apply overlay to ensure we get the latest esbuild
+           pkgs' = pkgs.extend esbuildOverlay;
+         in
+          let
+            purs-nix =
+              inputs.purs-nix
+                { inherit system;
+                  overlays = [ (import ./overlay.nix) esbuildOverlay ];
+                };
 
-             l = p.lib; 
-             p = pkgs // { 
-               nodejs-16_x = pkgs.nodejs_20; 
-               nodejs-18_x = pkgs.nodejs_20;
-               nodejs_18 = pkgs.nodejs_20;
+             l = pkgs'.lib; 
+             p = pkgs' // { 
+               nodejs-16_x = pkgs'.nodejs_20; 
+               nodejs-18_x = pkgs'.nodejs_20;
+               nodejs_18 = pkgs'.nodejs_20;
              };
              our-node = p.nodejs_20;
              npmlock2nix = import inputs.npmlock2nix { 
