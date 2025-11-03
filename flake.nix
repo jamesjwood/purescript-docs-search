@@ -4,7 +4,7 @@
 
       npmlock2nix =
         { flake = false;
-          url = "github:nix-community/npmlock2nix";
+          url = "github:jamesjwood/npmlock2nix";
         };
 
       ps-tools.follows = "purs-nix/ps-tools";
@@ -26,9 +26,11 @@
                  overlays = [ (import ./overlay.nix) ];
                };
 
-           l = p.lib; p = pkgs;
-           npmlock2nix = import inputs.npmlock2nix { inherit pkgs; };
-            our-node = p.nodejs_18;
+            l = p.lib; p = pkgs;
+            npmlock2nix = import inputs.npmlock2nix { 
+              pkgs = pkgs // { nodejs-18_x = pkgs.nodejs-18_x or pkgs.nodejs_18; };
+            };
+            our-node = p.nodejs-18_x;
            ps = import ./purs.nix { inherit npmlock2nix our-node p; } purs-nix;
            pname = "purescript-docs-search";
          in
