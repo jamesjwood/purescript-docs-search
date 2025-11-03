@@ -8,7 +8,7 @@
         };
 
       ps-tools.follows = "purs-nix/ps-tools";
-      purs-nix.url = "github:purs-nix/purs-nix/ps-0.15";
+      purs-nix.url = "github:jamesjwood/purs-nix/arm64-internal";
       utils.url = "github:ursi/flake-utils/8";
     };
 
