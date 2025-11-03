@@ -59,7 +59,7 @@ with builtins;
       dir = ./.;
 
       foreign."Docs.Search.IndexBuilder".node_modules =
-        npmlock2nix.node_modules { src = ./.; } + /node_modules;
+        npmlock2nix.v1.node_modules { src = ./.; } + /node_modules;
 
       nodejs = our-node;
 
