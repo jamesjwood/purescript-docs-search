@@ -34,7 +34,7 @@ with builtins;
           "newtype"
           "node-buffer"
           "node-fs"
-          "node-fs-aff"
+
           "node-process"
           "node-readline"
           "optparse"
@@ -45,7 +45,7 @@ with builtins;
           "profunctor-lenses"
           "strings"
           "test-unit"
-          "toppokki"
+
           "transformers"
           "tuples"
           "unfoldable"
@@ -59,7 +59,7 @@ with builtins;
       dir = ./.;
 
       foreign."Docs.Search.IndexBuilder".node_modules =
-        npmlock2nix.v1.node_modules { 
+        npmlock2nix.v2.node_modules { 
           src = ./.; 
           nodejs = our-node;
         } + /node_modules;

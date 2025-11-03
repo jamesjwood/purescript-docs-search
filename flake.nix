@@ -26,11 +26,16 @@
                  overlays = [ (import ./overlay.nix) ];
                };
 
-            l = p.lib; p = pkgs;
-            npmlock2nix = import inputs.npmlock2nix { 
-              pkgs = pkgs // { nodejs-18_x = pkgs.nodejs-18_x or pkgs.nodejs_18; };
-            };
-            our-node = p.nodejs-18_x;
+             l = p.lib; 
+             p = pkgs // { 
+               nodejs-16_x = pkgs.nodejs_20; 
+               nodejs-18_x = pkgs.nodejs_20;
+               nodejs_18 = pkgs.nodejs_20;
+             };
+             our-node = p.nodejs_20;
+             npmlock2nix = import inputs.npmlock2nix { 
+               pkgs = p;
+             };
            ps = import ./purs.nix { inherit npmlock2nix our-node p; } purs-nix;
            pname = "purescript-docs-search";
          in

@@ -161,7 +161,7 @@ let additions =
             ]
             "https://github.com/jvliwanag/purescript-literals.git"
             "ae3ef4e9c1ae7c57ec77bd13906fa60ae8abba4a"
-      , untagged-union =
+       , untagged-union =
           mkPackage
             [ "assert"
             , "console"
@@ -177,6 +177,7 @@ let additions =
             ]
             "https://github.com/jvliwanag/purescript-untagged-union.git"
             "ed8262a966e15e751322c327e2759a9b9c0ef3f3"
+
       }
 
 in  upstream // overrides // additions

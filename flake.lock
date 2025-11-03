@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "docs-search": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1762173388,
-        "narHash": "sha256-f6W2vdM2BhojlW6AfOqkLwMmojDX22O/Btq0yVYBSL4=",
-        "owner": "jamesjwood",
-        "repo": "purescript-docs-search",
-        "rev": "b8337c1c764d130a4e7031903db186d7cd7c9646",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jamesjwood",
-        "repo": "purescript-docs-search",
-        "type": "github"
-      }
-    },
     "flake-utils": {
       "locked": {
         "lastModified": 1644229661,
@@ -212,11 +196,11 @@
     "npmlock2nix": {
       "flake": false,
       "locked": {
-        "lastModified": 1762174733,
-        "narHash": "sha256-wYNdnZuG+tejmVx1OjVxSqdMXmxHHkqt980XWjavAiM=",
+        "lastModified": 1762178804,
+        "narHash": "sha256-GlNjAdK1DXSfEO/fLExLZsxg/dXdLefQrPL9R1UA3cA=",
         "owner": "jamesjwood",
         "repo": "npmlock2nix",
-        "rev": "de8456d1ea5c9eadb9b03969d03f3aa168f81076",
+        "rev": "37f4246d73a94f55819a7c8f9421eb975019c5be",
         "type": "github"
       },
       "original": {
@@ -263,7 +247,6 @@
     },
     "purs-nix": {
       "inputs": {
-        "docs-search": "docs-search",
         "get-flake": "get-flake",
         "lint-utils": "lint-utils",
         "make-shell": "make-shell_2",
@@ -273,11 +256,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1762173664,
-        "narHash": "sha256-tZX3WVc73r5h6p0ZafFyd+ghxawYwr5mk0Ob89eD5ac=",
+        "lastModified": 1762175076,
+        "narHash": "sha256-l0XQbY7nxrlQiDOOele8j5F0tSfLwCKvBBcykgIc4TE=",
         "owner": "jamesjwood",
         "repo": "purs-nix",
-        "rev": "6ddcb3e02251e520d8d4ed326666dc8b1b460052",
+        "rev": "52dddd2b405e990b4e943ddfc26a76aa04fcaeae",
         "type": "github"
       },
       "original": {

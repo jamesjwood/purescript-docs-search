@@ -28,7 +28,7 @@
   , "newtype"
   , "node-buffer"
   , "node-fs"
-  , "node-fs-aff"
+
   , "node-process"
   , "node-readline"
   , "optparse"
